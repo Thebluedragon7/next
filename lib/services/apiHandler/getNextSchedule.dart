@@ -4,7 +4,7 @@ import '../../models/nextSchedule.dart';
 
 List data = [];
 List<Schedule> schedules = [];
-Future<List<Schedule>> fetchFood() async {
+Future<List<Schedule>> fetchSchedule() async {
   var url = Uri.https('next-backend-six.vercel.app', '/schedules');
   var response = await http.get(url);
   data = json.decode(response.body)['schedules'];

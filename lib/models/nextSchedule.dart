@@ -21,13 +21,13 @@ class Schedule {
 
   Schedule.fromJson(Map<String, dynamic> json)
       : title = json['title'],
-        group = json['title'],
-        day = json['title'],
-        startTime = json['title'],
-        endTime = json['title'],
-        block = json['title'],
-        room = json['title'],
-        lecturer = json['title'];
+        group = json['group'],
+        day = json['day'],
+        startTime = json['startTime'],
+        endTime = json['endTime'],
+        block = json['block'],
+        room = json['room'],
+        lecturer = json['lecturer'];
 
   Map<String, dynamic> toMap() {
     return {

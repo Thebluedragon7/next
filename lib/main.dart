@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:next/providers/schedulesProvider.dart';
+import 'package:next/screens/forms/createSchedule.dart';
 import 'package:next/screens/homePage.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:next/screens/splashScreens/nextSplashScreen.dart';
+import 'package:provider/provider.dart';
 
 void main() async {
 //   FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin =
@@ -25,9 +28,17 @@ void main() async {
 //     );
 //   }
 
-  runApp(const MaterialApp(
-    title: 'Next',
-    debugShowCheckedModeBanner: false,
-    home: NextSplashScreen(),
+  runApp(MultiProvider(
+    providers: [
+      ChangeNotifierProvider(
+        create: (_) => ScheduleProvider(),
+      )
+    ],
+    child: MaterialApp(
+      title: 'Next',
+      debugShowCheckedModeBanner: false,
+      home: NextSplashScreen(),
+      // home: CreateSchedule(),
+    ),
   ));
 }

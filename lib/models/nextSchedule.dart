@@ -1,4 +1,5 @@
 class Schedule {
+  final String id;
   final String title;
   final String group;
   final String day;
@@ -9,6 +10,7 @@ class Schedule {
   final String lecturer;
 
   Schedule({
+    required this.id,
     required this.lecturer,
     required this.room,
     required this.block,
@@ -20,7 +22,8 @@ class Schedule {
   });
 
   Schedule.fromJson(Map<String, dynamic> json)
-      : title = json['title'],
+      : id = json["_id"],
+        title = json['title'],
         group = json['group'],
         day = json['day'],
         startTime = json['startTime'],
@@ -31,14 +34,14 @@ class Schedule {
 
   Map<String, dynamic> toMap() {
     return {
-      title: title,
-      group: group,
-      day: day,
-      startTime: startTime,
-      endTime: endTime,
-      block: block,
-      room: room,
-      lecturer: lecturer
+      "title": title,
+      "group": group,
+      "day": day,
+      "startTime": startTime,
+      "endTime": endTime,
+      "block": block,
+      "room": room,
+      "lecturer": lecturer
     };
   }
 }
